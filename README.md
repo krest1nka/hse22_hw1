@@ -30,9 +30,9 @@ multiqc -o multiqc fastqc
 
 #### Получившиеся графики:
 
-![alt-текст](https://github.com/krest1nka/hse22_hw1/tree/main/pics/1.jpg)
+![тык](/pics/1.jpg)
 
-![alt-текст](https://github.com/krest1nka/hse22_hw1/tree/main/pics/2.jpg)
+![тык](/pics/2.jpg)
 
 Все остальные можно посмотреть в html отчете в репозитории.
 
@@ -56,9 +56,9 @@ multiqc -o multiqc fastqc_t
 
 #### Получившиеся графики:
 
-![alt-текст](https://github.com/krest1nka/hse22_hw1/tree/main/pics/4.jpg)
+![тык](https://github.com/krest1nka/hse22_hw1/tree/main/pics/4.jpg)
 
-![alt-текст](https://github.com/krest1nka/hse22_hw1/tree/main/pics/5.jpg)
+![тык](https://github.com/krest1nka/hse22_hw1/tree/main/pics/5.jpg)
 
 
 Все остальные можно посмотреть в html отчете в репозитории.
