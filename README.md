@@ -1,4 +1,4 @@
-##### Создаем симлинки на файлы:
+#### Создаем симлинки на файлы:
 
 ```
 ln -s /usr/share/data-minor-bioinf/assembly/oilMP_S4_L001_R1_001.fastq 
@@ -7,7 +7,7 @@ ln -s /usr/share/data-minor-bioinf/assembly/oilMP_S4_L001_R1.fastq
 ln -s /usr/share/data-minor-bioinf/assembly/oilMP_S4_L001_R2.fastq 
 ```
 
-##### Далее создаем рандомные семплы:
+#### Далее создаем рандомные семплы:
 
 ```
 seqtk sample -s225 oil_R1.fastq 5000000 > sub1.fastq
@@ -16,7 +16,7 @@ seqtk sample -s225 oilMP_S4_L001_R1_001.fastq 1500000 > matep1.fastq
 seqtk sample -s225 oilMP_S4_L001_R2_001.fastq 1500000 > matep2.fastq
 ```
 
-##### Анализируем данные:
+#### Анализируем данные:
 
 ```
 mkdir fastqc
@@ -28,11 +28,11 @@ mkdir multiqc
 multiqc -o multiqc fastqc
 ```
 
-##### Получившиеся графики:
+#### Получившиеся графики:
 
 Все остальные можно посмотреть в html отчете в репозитории.
 
-##### Подрезаем чтения и удаляем ненужные файлы:
+#### Подрезаем чтения и удаляем ненужные файлы:
 
 ```
 platanus_trim sub1.fastq sub2.fastq
@@ -40,7 +40,7 @@ platanus_internal_trim matep1.fastq matep2.fastq
 rm sub1.fastq sub2.fastq matep1.fastq matep2.fastq
 ```
 
-##### Проделываем аналогичные шаги с подрезанными версиями:
+#### Проделываем аналогичные шаги с подрезанными версиями:
 
 ```
 mkdir fastqc_t
@@ -50,11 +50,11 @@ mkdir multiqc_t
 multiqc -o multiqc fastqc_t
 ```
 
-##### Получившиеся графики:
+#### Получившиеся графики:
 
 Все остальные можно посмотреть в html отчете в репозитории.
 
-##### Собираем контиги, скаффолды и уменьшаем промежутки:
+#### Собираем контиги, скаффолды и уменьшаем промежутки:
 
 ```
 time platanus assemble -o Poil -f sub1.fastq.trimmed sub2.fastq.trimmed 2> assemble.log
@@ -62,9 +62,9 @@ time platanus scaffold -o Poil -c Poil_contig.fa -IP1 sub1.fastq.trimmed sub2.fa
 time platanus gap_close -o Poil -c Poil_scaffold.fa -IP1 sub1.fastq.trimmed sub2.fastq.trimmed -OP2 matep1.fastq.int_trimmed  matep2.fastq.int_trimmed 2> gapclose.log
 ```
 
-##### [Анализируем данные](https://colab.research.google.com/drive/1aFFALSBt1pCwUcAKlgRUGLcMpVNV441r?usp=sharing):
+#### [Анализируем данные](https://colab.research.google.com/drive/1aFFALSBt1pCwUcAKlgRUGLcMpVNV441r?usp=sharing):
 
-Анализ контигов
+##### Анализ контигов
 
 Количество: 602
 
@@ -75,7 +75,7 @@ time platanus gap_close -o Poil -c Poil_scaffold.fa -IP1 sub1.fastq.trimmed sub2
 N50: 53980
 
 
-Анализ скаффолдов
+##### Анализ скаффолдов
 
 Общее количество: 73,
 
@@ -86,14 +86,14 @@ N50: 53980
 N50: 3831713
 
 
-Подсчет гэпов для необрезанных чтений
+##### Подсчет гэпов для необрезанных чтений
 
 Количество: 1657
 
 Длина: 6723
 
 
-Подсчет гэпов для обрезанных чтений
+##### Подсчет гэпов для обрезанных чтений
 
 Количество: 469
 
